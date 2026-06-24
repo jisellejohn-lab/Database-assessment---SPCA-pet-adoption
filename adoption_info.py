@@ -30,7 +30,7 @@ it in a table. """
 while True:
     try:
         adoption_info = input(
-            "\nSPCA Pet Adoption Database\n"
+            "\nSPCA Pet Adoption Database\n\n\n"
             "A: Budget friendly pets available in the store\n"
             "B: The number of animals available in each animal type\n"
             "C: Adult cats that are of the domestic breed\n"
