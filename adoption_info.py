@@ -22,7 +22,10 @@ def print_query(view_name:str):
     print(tabulate(results,headings))
     db.close()
 
-#creating a user interface based on the database my makig a list
+"""creating a user inetrface by connecting the data to SQLite, and it will make it accessible to the views created in it as well. 
+The user can type in the letter, which is the specific information from the views that they want to know about and the code will diplay 
+it in a table. """
+
 # Menu repeats until user chooses Z
 while True:
     try:
@@ -38,17 +41,16 @@ while True:
             "H: The most expensive pet available\n"
             "Z: Exit\n"
             "Type option here: "
-        )
+        ).upper()
 
-        adoption_info = adoption_info.upper()
-
+#using elif to set up options for the information for the user to enter their input
         if adoption_info == "A":
             print("You selected budget friendly pets")
             print_query("cheap_pets")
 
         elif adoption_info == "B":
             print("You selected number of animals in each animal type")
-            print_query("animal_type_count")
+            print_query("each_animal_type_count")
 
         elif adoption_info == "C":
             print("You selected adult domestic cats")
@@ -68,7 +70,7 @@ while True:
 
         elif adoption_info == "G":
             print("You selected pets from youngest to oldest")
-            print_query("youngest_to_oldest_pets")
+            print_query("youngest_to_oldest")
 
         elif adoption_info == "H":
             print("You selected most expensive pet")
@@ -80,6 +82,6 @@ while True:
 
         else:
             print("Invalid option. Please choose A, B, C, D, E, F, G, H or Z.")
-
+#setting up a statement for errors so the code does not break
     except:
         print("Something went wrong. Please try again.")
