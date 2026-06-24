@@ -23,61 +23,63 @@ def print_query(view_name:str):
     db.close()
 
 #creating a user interface based on the database my makig a list
-adoption_info = ''
-while adoption_info!= 'Z':
-    adoption_info = input('Welcome to the SPCA pets adoption database! /n/n'
-                          'Type the letter to know the specific information: /n'
-                          'A: Budget friendly pets available in the store/n'
-                          'B: The number of animals available in each animal type/n'
-                          'C: Adult cats that are of the domestic breed/n'
-                          'D: Expensive dogs and cats/n'
-                          'E: The number of longstay animals/n'
-                          'F: How many pets are available from each city/n' \
-                          'G: Pets from youngest to oldest/n'
-                          'H: The most expensive pet available/n'
-                          'Z: Exit/n/n Type your option here: ')
-    adoption_info = adoption_info.upper()
+# Menu repeats until user chooses Z
+while True:
+    try:
+        adoption_info = input(
+            "\nSPCA Pet Adoption Database\n"
+            "A: Budget friendly pets available in the store\n"
+            "B: The number of animals available in each animal type\n"
+            "C: Adult cats that are of the domestic breed\n"
+            "D: Expensive dogs and cats\n"
+            "E: The number of longstay animals\n"
+            "F: How many pets are available from each city\n"
+            "G: Pets from youngest to oldest\n"
+            "H: The most expensive pet available\n"
+            "Z: Exit\n"
+            "Type option here: "
+        )
 
-    if adoption_info == "A":
-        print("You selected budget friendly pets")
-        print_query("cheap_pets")
+        adoption_info = adoption_info.upper()
 
-    elif adoption_info == "B":
-        print("You selected number of animals in each animal type")
-        print_query("animal_type_count")
+        if adoption_info == "A":
+            print("You selected budget friendly pets")
+            print_query("cheap_pets")
 
-    elif adoption_info == "C":
-        print("You selected adult domestic cats")
-        print_query("adult_domestic_cats")
+        elif adoption_info == "B":
+            print("You selected number of animals in each animal type")
+            print_query("animal_type_count")
 
-    elif adoption_info == "D":
-        print("You selected expensive dogs and cats")
-        print_query("expensive_dogs_and_cats")
+        elif adoption_info == "C":
+            print("You selected adult domestic cats")
+            print_query("adult_domestic_cats")
 
-    elif adoption_info == "E":
-        print("You selected longstay animals")
-        print_query("longstay_animals")
+        elif adoption_info == "D":
+            print("You selected expensive dogs and cats")
+            print_query("expensive_dogs_and_cats")
 
-    elif adoption_info == "F":
-        print("You selected pets from each city")
-        print_query("pets_from_each_city")
+        elif adoption_info == "E":
+            print("You selected longstay animals")
+            print_query("longstay_animals")
 
-    elif adoption_info == "G":
-        print("You selected pets from youngest to oldest")
-        print_query("youngest_to_oldest_pets")
+        elif adoption_info == "F":
+            print("You selected pets from each city")
+            print_query("pets_from_each_city")
 
-    elif adoption_info == "H":
-        print("You selected most expensive pet")
-        print_query("most_expensive_pet")
+        elif adoption_info == "G":
+            print("You selected pets from youngest to oldest")
+            print_query("youngest_to_oldest_pets")
 
-    elif adoption_info == "Z":
-        print("Goodbye!")
-        break
+        elif adoption_info == "H":
+            print("You selected most expensive pet")
+            print_query("most_expensive_pet")
 
+        elif adoption_info == "Z":
+            print("Goodbye!")
+            break
 
+        else:
+            print("Invalid option. Please choose A, B, C, D, E, F, G, H or Z.")
 
-
-
-
-
-
+    except:
+        print("Something went wrong. Please try again.")
