@@ -30,7 +30,7 @@ it in a table. """
 while True:
     try:
         adoption_info = input(
-            "\nSPCA Pet Adoption Database\n\n\n"
+            "\nSPCA Pet Adoption Database\n\n"
             "A: Budget friendly pets available in the store\n"
             "B: The number of animals available in each animal type\n"
             "C: Adult cats that are of the domestic breed\n"
@@ -39,7 +39,8 @@ while True:
             "F: How many pets are available from each city\n"
             "G: Pets from youngest to oldest\n"
             "H: The most expensive pet available\n"
-            "Z: Exit\n"
+            "Z: Exit"
+
             "Type option here: "
         ).upper() #setting up lowercase so the code works when user types in lowercase letters 
 
