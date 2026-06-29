@@ -26,7 +26,7 @@ def print_query(view_name:str):
 The user can type in the letter, which is the specific information from the views that they want to know about and the code will diplay 
 it in a table. """
 
-# Menu repeats until user chooses Z
+# making a loop so that the code keeps running until user enters ‘Z’
 while True:
     try:
         adoption_info = input(
@@ -41,9 +41,9 @@ while True:
             "H: The most expensive pet available\n"
             "Z: Exit\n"
             "Type option here: "
-        ).upper()
+        ).upper() #setting up lowercase so the code works when user types in lowercase letters 
 
-#using elif to set up options for the information for the user to enter their input
+#using ELIF to set up options for the information for the user to enter their input
         if adoption_info == "A":
             print("You selected budget friendly pets")
             print_query("cheap_pets")
@@ -82,6 +82,6 @@ while True:
 
         else:
             print("Invalid option. Please choose A, B, C, D, E, F, G, H or Z.")
-#setting up a statement for errors so the code does not break
+#This makes the code run even when the user enters incorrect options. 
     except:
         print("Something went wrong. Please try again.")
